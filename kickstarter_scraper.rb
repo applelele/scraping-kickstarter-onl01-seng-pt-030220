@@ -21,7 +21,7 @@ def create_project_hash
   end
 
   # return the project hash
-  project
+  projects
 
 end
 

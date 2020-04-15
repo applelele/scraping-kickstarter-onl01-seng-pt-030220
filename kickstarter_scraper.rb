@@ -1,12 +1,22 @@
 # require libraries/modules here
-require 'pry'
 require "nokogiri"
+require 'pry'
 
 
 def create_project_hash
   html = File.read('fixtures/kickstarter.html')
-  kickstarter = Nokogiri::HTML(html)
-  # binding.pry
+  kickstarter = Nokogiri::HTML(html) # kickstarter returns a collection of html elements
+
+  projects = {}
+
+  # Iterate through the projects
+  kickstarer.css("li.project.grid_4").each do |project|
+    projects.[project] = {} # not <<
+  end
+
+  # return the project hash
+  project
+
 end
 
 create_project_hash

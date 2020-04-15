@@ -10,8 +10,9 @@ def create_project_hash
   projects = {}
 
   # Iterate through the projects
-  kickstarer.css("li.project.grid_4").each do |project|
-    projects.[project] = {} # not <<
+  kickstarer.css("li.project.grid_4").each do |project| # project is huge Nokogiri object
+    title = project.css("h2.bbcard_name strong a").text
+    projects[title.to_sym] = {} # not <<
   end
 
   # return the project hash
